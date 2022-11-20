@@ -42,3 +42,19 @@ def ctg(x):
 def arcsin(x):
     x = x + x**3/6 + 3*x**5/40 + 5*x**7/112 + 35*x**9/1152 + 81*x**11/2816 + 231*x**13/13312
     return x
+
+
+def arccos(x):
+    x = 3.14159265359/2 - arcsin(x)
+    return x
+
+
+def arctg(x):
+    x = arcsin(x / ((1 + x ** 2) ** 0.5))
+    return x
+
+
+def arcctg(x):
+    x = arccos(x / ((1 + x ** 2) ** 0.5))
+    return x
+
