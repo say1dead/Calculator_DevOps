@@ -6,8 +6,7 @@ def ln(x):
         return value
     else:
         return None
-
-
+        
 def log(x, base):
     if x > 0 and base > 0:
         value = ln(x) / ln(base)
