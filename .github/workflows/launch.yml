@@ -9,7 +9,6 @@ on:
 jobs:
 
   build:
-    # Windows is currently the only platform this action supports
     runs-on: windows-latest
 
     steps:
