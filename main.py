@@ -431,7 +431,6 @@ if k == 3:
                 for j in range(n):
                     a.append(int(input()))
                 mat1.append(a)
-            r = np.linalg.det(mat1)
             print("---------------\n")
             print("Результат = ", determinant(mat1))
 
@@ -442,7 +441,6 @@ if k == 3:
                 for j in range(n):
                     a.append(int(input()))
                 mat1.append(a)
-            r = np.linalg.det(mat1)
             print("---------------\n")
             print("Результат = ", determinant(mat1))
 print("Спасибо за использование нашего калькулятора")
