@@ -17,7 +17,7 @@ def determinant(A, total=0):
 
 def ln(x):
     if x > 0:
-        value = 10 ** 8 * ((x ** (1 / 10 ** 8)) - 1)
+        value = 10 ** 8 * ((x ** (1 / 10 ** 8))- 1)
         return value
     else:
         return None
