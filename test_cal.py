@@ -25,7 +25,7 @@ def sin(x):
     value = x
     sign = -1
     for i in range(3, 100, 2):
-        value += (x  i / factorial(i) * sign)
+        value += (x ** i / factorial(i) * sign)
         sign *= -1
     return round(value, 4)
 
