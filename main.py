@@ -1,3 +1,9 @@
+
+def transpone(a):
+    zip_row = zip(*a)
+    b = [list(row) for row in zip_row]
+    return b
+
 def determinant(A, total=0):
     indices = list(range(len(A)))
     if len(A) == 2 and len(A[0]) == 2:
@@ -17,7 +23,7 @@ def determinant(A, total=0):
 
 def ln(x):
     if x > 0:
-        value = 10 ** 8 * ((x ** (1 / 10 ** 8))- 1)
+        value = 10 ** 8 * ((x ** (1 / 10 ** 8)) - 1)
         return value
     else:
         return None
@@ -329,23 +335,21 @@ if k == 3:
     if k == 5:
         m = int(input("Введите количество столбцов -"))
         n = int(input("Введите количество строк -"))
-        mat1 = []
-        mat2 = []
-
         print("Введите матрицу -")
-        for i in range(n):
+        for i in range(m):
             a = []
-            for j in range(m):
+            for j in range(n):
                 a.append(int(input()))
             mat1.append(a)
-        if m == n:
-            mat2 = list(zip(*mat1))
         print("---------------\n")
         print("Транспонированная - \n")
-        for i in range(m):
-            for j in range(n):
+        mat2 = transpone(mat1)
+        print(mat2)
+        for i in range(n):
+            for j in range(m):
                 print(mat2[i][j], end=' ')
             print()
+
     #определитель
     if k == 6:
         m = int(input("Введите количество столбцов -"))
