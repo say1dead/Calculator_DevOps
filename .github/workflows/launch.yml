@@ -27,8 +27,6 @@ jobs:
         with:
           script-name: main.py
 
-      - name: Python Unit Test
-        uses: onichandame/python-test-action@0.0.0
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
