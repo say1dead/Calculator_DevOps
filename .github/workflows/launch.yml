@@ -9,11 +9,12 @@ on:
 jobs:
 
   build:
-    runs-on: ubuntu-latest
+
+    runs-on: windows-latest
 
     steps:
     
-    
+      # Check-out repository
       - uses: actions/checkout@v3
 
       # Setup Python
@@ -22,13 +23,14 @@ jobs:
           python-version: '3.10' 
           architecture: 'x64' 
           
-      
+      # Build python script into a stand-alone exe
       - uses: jimkring/python-script-to-exe@v0.2.0
         with:
           script-name: main.py
 
+      # Uploads artifact
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
           name: exe
-          path: main.exe
+          path: build/main.exe
