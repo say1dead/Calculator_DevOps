@@ -77,7 +77,7 @@ def ctg(x):
         return None
 
 
-#  + 429*x**15/30720
+
 def arcsin(x):
     if -1 < x < 1:
         x = x + x**3/6 + 3*x**5/40 + 5*x**7/112 + 35*x**9/1152 + 81*x**11/2816 + 231*x**13/13312 + 429*x**15/30720
@@ -344,7 +344,6 @@ if k == 3:
         print("---------------\n")
         print("Транспонированная - \n")
         mat2 = transpone(mat1)
-        print(mat2)
         for i in range(n):
             for j in range(m):
                 print(mat2[i][j], end=' ')
