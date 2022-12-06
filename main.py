@@ -1,3 +1,36 @@
+def luDecomposition(mat, n):
+    lower = [[0 for x in range(n)]
+             for y in range(n)]
+    upper = [[0 for x in range(n)]
+             for y in range(n)]
+    for i in range(n):
+        for k in range(i, n):
+            soma = 0
+            for j in range(i):
+                soma += (lower[i][j] * upper[j][k])
+            upper[i][k] = mat[i][k] - soma
+
+        for k in range(i, n):
+            if (i == k):
+                lower[i][i] = 1
+            else:
+                soma = 0
+                for j in range(i):
+                    soma += (lower[k][j] * upper[j][i])
+                if (upper[i][i] != 0):
+                    lower[k][i] = (mat[k][i] - soma) / (upper[i][i])
+
+    print("L matrix - \n")
+    for i in range(n):
+        # Lower
+        for j in range(n):
+            print(float(round(lower[i][j], 1)), end="  ")
+        print("", end="\n")
+    print("U matrix - \n")
+    for i in range(n):
+        for j in range(n):
+            print(float(round(upper[i][j], 1)), end="  ")
+        print("", end="\n")
 
 def transpone(a):
     zip_row = zip(*a)
@@ -195,7 +228,7 @@ if k == 2:
 if k == 3:
     print("Что Вы хотите сделать - ")
     k = int(input("1. Сложить две матрицы.\n2. Вычесть из 1 матрицы 2 матрицу.\n3. Умножить матрицу 1 на матрицу 2."
-                  "\n4. Умножение матрицы на константу.\n5. Транспонирование матрицы.\n6. Найти определитель.\nВаш выбор - "))
+                  "\n4. Умножение матрицы на константу.\n5. Транспонирование матрицы.\n6. Найти определитель.\n7. Написать LU разложение.\nВаш выбор - "))
     print("---------------\n")
     mat1 = []
     mat2 = []
@@ -446,5 +479,16 @@ if k == 3:
                 mat1.append(a)
             print("---------------\n")
             print("Результат = ", determinant(mat1))
+    if k == 7:
+        m = int(input("Введите количество столбцов -"))
+        n = int(input("Введите количество строк -"))
+
+        print("Введите матрицу -")
+        for i in range(m):
+            a = []
+            for j in range(n):
+                a.append(int(input()))
+            mat1.append(a)
+        luDecomposition(mat1, n)
 print("Спасибо за использование нашего калькулятора")
 input()
