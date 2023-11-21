@@ -1,6 +1,5 @@
 from math import *
 
-
 def luDecomposition(mat, n):
     lower = [[0 for x in range(n)]
              for y in range(n)]
